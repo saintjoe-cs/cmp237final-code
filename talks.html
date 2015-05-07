@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My home page</title>
+  <script>
+  function talksAbout(node, string) {
+  var count = 0; 
+  if (node.nodeType == document.ELEMENT_NODE) {
+    for (var i = 0; i < node.childNodes.length; i++) {
+      count =  (talksAbout(node.childNodes[i], string))
+        // return count;
+	;
+    }
+    return false;
+  } else if (node.nodeType == document.TEXT_NODE) {
+    if(node.nodeValue.indexOf(string) > -1)
+      count++;
+  }
+  return count;
+}
+ </script>    
+  </head>
+  <body>
+    <h1>A very verbose home page</h1>
+    <p>This is one of the things I most love to do, code.</p>
+    <p>I also love to set up interesting problems, mostly for myself
+       but also for others.  I want you to see this link:
+      <a href="http://eloquentjavascript.net">here</a>.</p>
+  </body>
+</html>
+
